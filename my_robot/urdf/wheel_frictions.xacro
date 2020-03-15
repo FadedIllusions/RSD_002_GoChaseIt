@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+  <robot xmlns:xacro="http://ros.org/wiki/xacro" name="wheel_frictions" >
+
+  <!-- WHEEL FRICTION PROPERTIES -->
+  <xacro:macro name="wheel_friction" params="prefix ">
+    <gazebo reference="${prefix}_wheel">
+      <mu1 value="1.0" />
+	  <mu2 value="1.0" />
+	  <kp value="10000000.0" />
+	  <kd value="1.0" />
+	  <fdir1 value="1 0 0" />
+    </gazebo>
+  </xacro:macro>
+  <!-- END WHEEL FRICTION PROPERTIES -->
+
+</robot>

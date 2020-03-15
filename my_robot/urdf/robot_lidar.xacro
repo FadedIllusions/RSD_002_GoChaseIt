@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+  <robot xmlns:xacro="http://ros.org/wiki/xacro" name="robot_lidar">
+
+    <!-- ROBOT LIDAR HOKUYO -->
+	<joint name="hokuyo_joint" type="fixed">
+      <origin xyz="0.2 0 0.185" rpy=" 0 0 0"/>
+      <child link="hokuyo"/>
+      <parent link="base_link"/>
+      <axis xyz="0 1 0" rpy=" 0 0 0"/>
+    </joint>
+  
+    <link name="hokuyo">    
+      <inertial>
+        <mass value="1e-5"/>
+        <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+          <inertia 
+            ixx="1e-6" ixy="0" ixz="0"
+            iyy="1e-6" iyz="0"
+            izz="1e-6"
+          />
+      </inertial>
+    
+      <collision name="hokuyo_collision">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </collision>
+    
+      <visual name="hokuyo_visual">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://my_robot/meshes/hokuyo.dae" />
+        </geometry>
+
+	    <material name="">
+	      <color rgba="0.79216 0.81961 0.93333 1" />
+	    </material>
+      </visual>
+    </link> 
+    <!-- END ROBOT LIDAR HOKUYO -->
+
+  </robot>
