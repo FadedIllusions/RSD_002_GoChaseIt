@@ -24,9 +24,12 @@ In this project, you should create two ROS packages inside your ```catkin_ws/src
     * Create a ```ball_chaser``` ROS package to hold your C++ nodes.
     * Write a ```drive_bot``` C++ node that will provide a ```ball_chaser/command_robot``` service to drive the robot by controlling its linear x and angular z velocities. The service should publish to the wheel joints and return back the requested velocities.
     * Write a ```process_image``` C++ node that reads your robot’s camera image, analyzes it to determine the presence and position of a white ball. If a white ball exists in the image, your node should request a service via a client to drive the robot towards it.
-    The ```ball_chaser.launch``` should run both the ```drive_bot``` and the ```process_image``` nodes.
+    * The ```ball_chaser.launch``` should run both the ```drive_bot``` and the ```process_image``` nodes.
     
-  
+*
+*
+*
+
 For this project, I decided to use urdf files to design a 4-wheeled mobile robot implementing a skid steer controller since many/most UGVs and AGVs are, at very least, 4-wheeled.
 
 ![RobotScreenshot](./images/002_002.png)
